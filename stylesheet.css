@@ -1,0 +1,16 @@
+body {
+  background-color: #C5A48A;
+}
+
+
+box {
+  width: 200px;
+  height: 200px;
+  color: #B7918C;
+  transition: all 200ms ease-in-out;
+  
+}
+
+box:hover {
+  color: #B38CB4;
+}
