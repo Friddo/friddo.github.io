@@ -75,8 +75,8 @@ div {
 
 
   background-color: #082133;
-  height: 20em;
-  width: 20em;
+  height: 15em;
+  width: 15em;
   vertical-align: middle;
   display:inline-block;
   margin: 2em;
@@ -95,7 +95,7 @@ div {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3.5em;
+  font-size: 3em;
 }
 
 .a, .b, .c, .d {
