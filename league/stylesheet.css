@@ -31,7 +31,7 @@ body {
 }
 
 
-
+/*
 .left {
   background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg");
   background-size: cover;
@@ -44,7 +44,83 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-
+*/
 .panel:hover {
   width:300%;
+}
+
+
+
+
+
+
+
+.slideshow-container {
+
+}
+
+
+
+
+
+
+
+.slide {
+  height: 100%;
+  background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  overflow: auto;
+}
+
+
+
+.prev, .next {
+  cursor: pointer;
+  width: auto;
+  position: relative;
+  
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+  opacity: 0;
+}
+
+
+
+
+
+.left:hover .next {
+  opacity: 1;
+}
+.left:hover .prev {
+  opacity: 1;
+}
+.right:hover .next {
+  opacity: 1;
+}
+.right:hover .prev {
+  opacity: 1;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
