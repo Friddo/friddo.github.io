@@ -13,7 +13,11 @@
   var slideIndexR = 1;
 
 
-    plusSlides(0, 3);
+  var lL = preloadChamp(k[k1], list[k[k1]])
+  var lR = preloadChamp(k[k2], list[k[k2]])
+
+  setTimeout(plusSlides(0, 3), 3000);
+
 
     // Next/previous controls
     function plusSlides(n, s) {
@@ -30,6 +34,7 @@
 
     }
 
+
     function showSlides(n, s) {
 
       var slide = document.getElementsByClassName("slide");
@@ -38,18 +43,28 @@
         if (n > randLeft.length) {slideIndexL = 1}
         if (n < 1) {slideIndexL = randLeft.length}
         slide[0].style.backgroundImage = "url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/"+k[k1]+"_"+randLeft[slideIndexL-1]+".jpg)";
+
       }
       if(s == 2) {
         if (n > randRight.length) {slideIndexR = 1}
         if (n < 1) {slideIndexR = randRight.length}
         slide[1].style.backgroundImage = "url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/"+k[k2]+"_"+randRight[slideIndexR-1]+".jpg)";
+
       }
 
 
+}
 
 
 
+function preloadChamp(c, l) {
+  var final = [];
+  var baseurl = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/"+c+"_";
 
-
-
+  for(var i = 0;i<l.length;i++) {
+    var t = new Image();
+    t.src = baseurl+l[i]+".jpg"
+    final.push(t);
+  }
+  return final;
 }

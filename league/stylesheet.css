@@ -67,10 +67,10 @@ body {
 
 .slide {
   height: 100%;
-  background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg");
+  background-image: ;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 60% 50%;
+  background-position: 70% 50%;
   overflow: auto;
 }
 
@@ -80,7 +80,7 @@ body {
   cursor: pointer;
   width: auto;
   position: relative;
-  
+
   margin-top: -22px;
   padding: 16px;
   color: white;
