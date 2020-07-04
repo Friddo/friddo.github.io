@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400i,900");
+
+html {
+  margin: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  background-color: black;
+  height: 100vh;
+  margin: 0;
+}
+
+.grid-container {
+  height: 100%;
+  width: 100vw;
+  display: inline-flex;
+}
+
+.panel {
+  width: 50%;
+  height:100%;
+  transition: width 1000ms ease-in-out;
+
+  text-align: center;
+  font-size: 5rem;
+
+
+}
+
+
+
+.left {
+  background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.right {
+  background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.panel:hover {
+  width:300%;
+}
