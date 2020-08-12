@@ -1,65 +1,78 @@
+<!DOCTYPE html>
+<html>
 <head>
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,900;1,400&display=swap" rel="stylesheet"> -->
-  <link rel="stylesheet" href="stylesheet.css">
-
+<link rel="stylesheet" href="stylesheet.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-
-
 <body>
-<section class="site">
-  <div class="grid-container">
 
-    <div class="description">
-      <h1 class="title">Friddo <span>Ønskeliste</span></h1>
-    </div>
 
-    <div class="item">
-      <div class="left">
-      <img src="https://img.discogs.com/YjiUbH-R82KJf5MujAI1VDMS4cg=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2179374-1576817857-6649.jpeg.jpg">
-      </div>
-      <div class="right sub">
-      <h1>Tatsuro Yamashita - For You</h1>
-      <h2>Price: €90</h2>
-      <a href="https://www.discogs.com/sell/list?master_id=351396&ev=mb&format=Vinyl">link</a>
-      </div>
-    </div>
+  <h1>Baus Translator</h1>
 
-    <div class="item">
-      <div class="left">
-      <img src="https://i1.sndcdn.com/artworks-000344394528-p0s0y7-t500x500.jpg">
-      </div>
-      <div class="right sub">
-      <h1>Tatsuro Yamashita - Ride On Time</h1>
-      <h2>Price: €50 - 60</h2>
-      <a href="https://www.discogs.com/sell/list?sort=price%2Casc&limit=25&master_id=966502&ev=mb&format=Vinyl">link</a>
-      </div>
-    </div>
+  <div id="c">
 
-    <div class="item">
-      <div class="left">
-      <img src="https://1.bp.blogspot.com/-c1k6cELoEpQ/VbJoyIC0lsI/AAAAAAAACmw/Q5N17krjjMI/s640/E5B1B1E4B88BE98194E9838E_Moonglow.jpg">
-      </div>
-      <div class="right sub">
-      <h1>Tatsuro Yamashita - Moonglow</h1>
-      <h2>Price: €30</h2>
-      <a href="https://www.discogs.com/sell/release/2063296?ev=rb">link</a>
-      </div>
-    </div>
 
-    <div class="item">
-      <div class="left">
-      <img src="https://www.imusic.dk/images/item/scaled/937/0194491131937/snarky-puppy-2020-we-like-it-here-lp.jpg">
-      </div>
-      <div class="right sub">
-        <h1>Snarky Puppy - We Like It Here</h1>
-        <h2>Price: $30</h2>
-        <a href="https://store.snarkypuppy.com/products/we-like-it-here-vinyl-lp">link</a>
-      </div>
-    </div>
+    <textarea id="in" rows = "5" cols = "60" name = "description"></textarea>
+    <br>
+    <button onclick="baus('in')">Translate</button>
 
 
 
   </div>
-</section>
+
+
+
+
+  <script>
+  function baus(id) {
+
+    var rules = [
+      [/\bch/gi, "sh"],
+      [/sas/gi, "sos"],
+      [/j/gi, "y"],
+      [/gr/gi, "j"],
+      [/gg/gi, "yiyi"]
+    ]
+
+
+    e = document.getElementById(id).value;
+    t = e;
+    for(var i = 0; i<rules.length; i++) {
+      e = e.replace(rules[i][0], rules[i][1])
+    }
+    if(t != e) {
+      embed(t,e)
+    } else{
+    console.log(e);
+  }
+  }
+
+
+
+
+
+  function embed(b,a) {
+
+    var div = document.createElement("div");
+    var pb = document.createElement("p");
+    var pa = document.createElement("p");
+
+    var br = document.createElement("p")
+    var hr = document.createElement("hr")
+    br.innerHTML = "🡇";
+    pb.innerHTML = b;
+    pa.innerHTML = a;
+    div.appendChild(hr)
+    div.appendChild(pb)
+    div.appendChild(br)
+    div.appendChild(pa)
+
+    var appendLoc = document.getElementById("c");
+    appendLoc.appendChild(div);
+
+  }
+  </script>
 
 </body>
+
+</html>
