@@ -1,3 +1,3 @@
-Check:\n
-/baus\n
+Check:
+/baus
 /league
