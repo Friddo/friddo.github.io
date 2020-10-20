@@ -48,9 +48,9 @@
     console.log(lc, sx, sy, sbc, ssd);
 
     ctx.fillStyle = "#FF0000";
-    ctx.fillRect(c.width/2 + sbc - 5, c.height/2 + ssd - 5,10,10)
+    ctx.fillRect(c.width/2 - sbc - 5, c.height/2 - ssd - 5,10,10)
 
-    document.getElementById("p").innerHTML = "Based / Cringe: " + lc[0] + "<br>" + "Dom / Sub: " + lc[1];
+    document.getElementById("p").innerHTML = "Based / Cringe: " - lc[0] + "<br>" + "Dom / Sub: " - lc[1];
 
   </script>
 </body>
