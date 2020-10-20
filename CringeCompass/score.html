@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Friddo</title>
+  <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+
+
+<body>
+  <div class="container">
+    <h1>CringeCompass</h1>
+    <canvas id="can" width="300", height="300"></canvas>
+    <p id="p">Based / Cringe: 239 <br> Dom / Sub: 210</p>
+    <button onclick="window.location.href='index.html'">Back To Main Page</button>
+  </div>
+
+  <script>
+    var c = document.getElementById("can");
+    var ctx = c.getContext("2d");
+
+    ctx.moveTo(c.width/2,25);
+    ctx.lineTo(c.width/2,c.height-25);
+    ctx.stroke();
+
+    ctx.moveTo(45,c.height/2);
+    ctx.lineTo(c.width-47,c.height/2);
+    ctx.stroke();
+
+    ctx.font = "16px Arial";
+
+    ctx.fillText("Sub",c.width/2-15,20);
+    ctx.fillText("Dom",c.width/2-17,c.height);
+
+    ctx.font = "14px Arial";
+
+    ctx.fillText("Based",0,c.height/2+4);
+    ctx.fillText("Cringe",c.width-45,c.height/2+4);
+
+    var lc = JSON.parse(localStorage.getItem("score"));
+    var sx = c.width * 0.8;
+    var sy = c.height * 0.8;
+
+    var sbc = lc[0] * (sx/2) / 15
+    var ssd = lc[1] * (sy/2) / 15
+
+    console.log(lc, sx, sy, sbc, ssd);
+
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(c.width/2 + sbc - 5, c.height/2 + ssd - 5,10,10)
+
+    document.getElementById("p").innerHTML = "Based / Cringe: " + lc[0] + "<br>" + "Dom / Sub: " + lc[1];
+
+  </script>
+</body>
+
+</html>

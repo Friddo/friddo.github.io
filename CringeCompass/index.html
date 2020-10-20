@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Friddo</title>
+  <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+
+
+<body>
+  <div class="container">
+    <h1>CringeCompass</h1>
+
+    <button class="submit" onclick="window.location.href='./questions/index.html'">Start Quiz</button><br><br>
+    <button id="results" onclick="window.location.href='score.html'">See Previous Result</button>
+  </div>
+  <script>
+    if(localStorage.getItem('score') == undefined) {
+      document.getElementById("results").style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
