@@ -1,6 +1,9 @@
 var bc = 0;
 var sd = 0;
 
+var lim = 10;
+
+
 localStorage.clear();
 
 var currQ = -1;
@@ -36,10 +39,10 @@ function next() {
 
   bc += qList[currQ][2][ans-1][0]
   sd += qList[currQ][2][ans-1][1]
-  if(bc>15){bc = 15}
-  if(sd>15){sd = 15}
-  if(bc<-15){bc = -15}
-  if(sd<-15){sd = -15}
+  if(bc>lim){bc = lim}
+  if(sd>lim){sd = lim}
+  if(bc<-lim){bc = -lim}
+  if(sd<-lim){sd = -lim}
   console.log(bc,sd)
 
   }
