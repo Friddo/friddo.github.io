@@ -33,7 +33,15 @@ var qList = [
 
 ["Du har inviteret et par venner ud til frokost, hvor spiser I?",
 ["den lokale kebab","starbucks","McDonald's","hjemme hos dig"],
-[[-1,-1],[-2,-2],[1,-1],[1,2]]]
+[[-1,-1],[-2,-2],[1,-1],[1,2]]],
+  
+["En person har skrevet en negativ kommentar på dit facebookopslag, hvad gør du?",
+["poster deres adresse","indleder tredje verdenskrig i kommentarerne","ignorerer dem","sletter deres kommentar"],
+[[2,2],[-2,1],[0,-1],[1,-1]]],
+  
+["du er udenlands i en højrisiko smittezone, hvad gør du?",
+["tager på sightseeing uden foranstaltninger","passer på som et ansvarligt og samfundsbevidst menneske","har sex med halvdelen af byen","tager hjem"],
+[[-1,1],[-1,-1],[2,2],[-2,-2]]]
 
 ];
 
