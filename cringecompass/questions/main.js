@@ -8,14 +8,14 @@ var currQ = -1;
 var qList = [
 
 ["Du sidder i en tom bus og en hot pige kommer ind, hvad gør du?",
-["ingenting","pickup line","tilbyder hende din plads","står af"],
+["Ingenting","Pickup line","Tilbyder hende din plads","Står af"],
 [[1,0],[3,1],[-2,-2],[0,-3]]],
 
 ["Du skal have et kæledyr, hvilket vælger du?",
 ["hund","kat","slange","indvandrer"],
 [[1,0],[0,-1],[-1,0],[3,1]]],
 
-["hvad er dit syn på kvinder?",
+["Hvad er dit syn på kvinder?",
 ["syn på hvad?","all women are queens","if she breathes, she a thot","#ligestilling"],
 [[3,0],[-2,-3],[1,1],[0,-1]]],
 
