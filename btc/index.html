@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+
+</head>
+<body>
+
+  <p> BTC is at: </p>
+
+
+  <script>
+  var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+    xhr.send();
+};
+
+
+var price = 0
+getJSON('https://api.coindesk.com/v1/bpi/currentprice.json',
+function(err, data) {
+  if (err !== null) {
+    console.log('Something went wrong: ' + err);
+  } else {
+    price = data.bpi.USD.rate;
+    price = price.substring(0, price.length - 2);
+    var p = document.createElement("h1");   // Create a <button> element
+    p.innerHTML = price;                   // Insert text
+    document.body.appendChild(p);
+    cur = data.bpi.USD.code;
+    var p = document.createElement("p");   // Create a <button> element
+    p.innerHTML = cur;                   // Insert text
+    document.body.appendChild(p);
+    console.log(cur)
+  }
+});
+
+
+  </script>
+
+</body>
+
+</html>
