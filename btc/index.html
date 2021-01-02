@@ -46,8 +46,32 @@ function(err, data) {
     p.innerHTML = cur;                   // Insert text
     document.body.appendChild(p);
     console.log(cur)
-    setTimeout(() => { playSound("https://cdn.discordapp.com/attachments/296549274865500160/794686519335583774/Synops_-_Incursion_HD_YTmp3.net.mp3") }, 2000);
+    setTimeout(() => { playSound("https://cdn.discordapp.com/attachments/296549274865500160/794686519335583774/Synops_-_Incursion_HD_YTmp3.net.mp3")}, 2000);
+
+    //investment
+    var amount = 0;
+    var bPrice = 31400;
+    var inv = amount*bPrice
+
+
+    var p = document.createElement("p");   // Create a <button> element
+    p.innerHTML = "Current investment: $" + inv;                   // Insert text
+    document.body.appendChild(p);
+
+
+    fPrice = parseInt(price.replace(",",""))
+
+    var p = document.createElement("p");   // Create a <button> element
+    p.innerHTML = "Gain/Loss: $" + (amount*fPrice - inv);                   // Insert text
+    document.body.appendChild(p);
+
+
+
+
+
+
   }
+
 });
 
 
