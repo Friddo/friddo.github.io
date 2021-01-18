@@ -58,7 +58,11 @@
         final.push(tmp)
         tmp = ""
       } else {
-        tmp += "<br>" + logs[i]
+        if(i == logs.length) {
+          tmp += "<br>"
+        } else {
+          tmp += "<br>" + logs[i]
+        }
       }
     }
     final.push(tmp)
