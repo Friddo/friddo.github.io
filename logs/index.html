@@ -49,6 +49,7 @@
     logs = ""
     readTextFile("./"+filename+".txt")
     console.log(logs)
+    logs.length = logs.length - 1
     var title = logs.shift()
     logs.shift()
     var final = []
