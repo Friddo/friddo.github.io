@@ -49,7 +49,6 @@
     logs = ""
     readTextFile("./"+filename+".txt")
     console.log(logs)
-    logs.length = logs.length - 1
     var title = logs.shift()
     logs.shift()
     var final = []
@@ -70,7 +69,9 @@
     console.log(final)
     final2 = []
     for(i = 0;i<final.length;i+=2) {
-      final2.push([final[i],final[i+1]])
+      if(final[i+1] != undefined) {
+        final2.push([final[i],final[i+1]])
+      }
     }
     console.log(final2)
     
