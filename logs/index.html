@@ -47,7 +47,7 @@
   function read(filename) {
     document.getElementsByTagName('BODY')[0].innerHTML = '';
     logs = ""
-    readTextFile("/"+filename+".txt")
+    readTextFile("./"+filename+".txt")
     console.log(logs)
     var title = logs.shift()
     logs.shift()
@@ -85,8 +85,6 @@
       document.body.appendChild(p);
 
     }
-
-
 
 
   }
