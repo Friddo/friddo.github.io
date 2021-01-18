@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+
+</head>
+<body>
+
+  <h1>Historien om gåsen</h1>
+
+  <script>
+    var logs = ""
+    function readTextFile(file)
+    {
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    logs = rawFile.responseText.split(/\n/)
+
+                }
+            }
+        }
+        rawFile.send(null);
+    }
+
+    function read(filename) {
+      logs = ""
+      readTextFile("/"+filename+".txt")
+      console.log(logs)
+      var final = []
+      var tmp = ""
+      for(var i = 0;i<logs.length;i++) {
+        if(logs[i].length == 1) {
+          final.push(tmp)
+          tmp = ""
+        } else {
+          tmp += logs[i]
+        }
+      }
+      final.push(tmp)
+      console.log(final)
+      final2 = []
+      for(i = 0;i<final.length;i+=2) {
+        final2.push([final[i],final[i+1]])
+      }
+      console.log(final2)
+
+
+      for(i = 0;i<final2.length;i++) {
+        var p = document.createElement("div");   // Create a <button> element
+        p.innerHTML = final2[i][0] +"<br><br>" + final2[i][1] + "<br>";                  // Insert text
+        document.body.appendChild(p);
+
+      }
+
+
+
+
+    }
+    read("fuglen")
+
+
+  </script>
+
+</body>
+
+</html>
