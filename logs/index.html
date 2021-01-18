@@ -58,7 +58,7 @@
         final.push(tmp)
         tmp = ""
       } else {
-        tmp += logs[i]
+        tmp += "<br>" + logs[i]
       }
     }
     final.push(tmp)
@@ -78,7 +78,7 @@
     t.href = "index.html"
     document.body.appendChild(t)
     var p = document.createElement("div");
-    p.innerHTML = "<br><br>";
+    p.innerHTML = "<br>";
     document.body.appendChild(p);
     for(i = 0;i<final2.length;i++) {
       var p = document.createElement("div");
