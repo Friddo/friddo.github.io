@@ -6,67 +6,94 @@
 </head>
 <body>
 
-  <h1>Historien om gåsen</h1>
-
-  <script>
-    var logs = ""
-    function readTextFile(file)
-    {
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
-                    logs = rawFile.responseText.split(/\n/)
-
-                }
-            }
-        }
-        rawFile.send(null);
-    }
-
-    function read(filename) {
-      logs = ""
-      readTextFile("./"+filename+".txt")
-      console.log(logs)
-      var final = []
-      var tmp = ""
-      for(var i = 0;i<logs.length;i++) {
-        if(logs[i].length == 1) {
-          final.push(tmp)
-          tmp = ""
-        } else {
-          tmp += "<br>" + logs[i]
-        }
-      }
-      final.push(tmp)
-      console.log(final)
-      final2 = []
-      for(i = 0;i<final.length;i+=2) {
-        final2.push([final[i],final[i+1]])
-      }
-      console.log(final2)
+  <h1>Logs</h1>
+  <br>
+  <a href="javascript:read('HistorienOmGåsen')">Historien om Gåsen</a>
 
 
-      for(i = 0;i<final2.length;i++) {
-        var p = document.createElement("div");   // Create a <button> element
-        p.innerHTML = "<b>" + final2[i][0] +"</b><br>" + final2[i][1] + "<br>";                  // Insert text
-        document.body.appendChild(p);
-
-      }
-
-
-
-
-    }
-    read("fuglen")
-
-
-  </script>
 
 </body>
 
+<script>
+
+
+
+
+
+
+
+
+
+
+  var logs = ""
+  function readTextFile(file)
+  {
+      var rawFile = new XMLHttpRequest();
+      rawFile.open("GET", file, false);
+      rawFile.onreadystatechange = function ()
+      {
+          if(rawFile.readyState === 4)
+          {
+              if(rawFile.status === 200 || rawFile.status == 0)
+              {
+                  logs = rawFile.responseText.split(/\n/)
+
+              }
+          }
+      }
+      rawFile.send(null);
+  }
+
+  function read(filename) {
+    document.getElementsByTagName('BODY')[0].innerHTML = '';
+    logs = ""
+    readTextFile("/"+filename+".txt")
+    console.log(logs)
+    var title = logs.shift()
+    logs.shift()
+    var final = []
+    var tmp = ""
+    for(var i = 0;i<logs.length;i++) {
+      if(logs[i].length <= 1) {
+        final.push(tmp)
+        tmp = ""
+      } else {
+        tmp += logs[i]
+      }
+    }
+    final.push(tmp)
+    console.log(final)
+    final2 = []
+    for(i = 0;i<final.length;i+=2) {
+      final2.push([final[i],final[i+1]])
+    }
+    console.log(final2)
+
+    var t = document.createElement("h1");
+    t.innerHTML = title;
+    document.body.appendChild(t)
+    var t = document.createElement("a");
+    t.innerHTML = "← back"
+    t.href = "index.html"
+    document.body.appendChild(t)
+    var p = document.createElement("div");
+    p.innerHTML = "<br><br>";
+    document.body.appendChild(p);
+    for(i = 0;i<final2.length;i++) {
+      var p = document.createElement("div");
+      p.innerHTML = final2[i][0] +"<br><br>" + final2[i][1] + "<br>";
+      document.body.appendChild(p);
+
+    }
+
+
+
+
+  }
+
+
+
+
+
+</script>
 </html>
