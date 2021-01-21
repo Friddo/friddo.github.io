@@ -80,8 +80,9 @@
     var im = document.createElement("img");
     im.src = "./"+filename+".png";
     im.onerror = "e()"
+    if(im.width != 0) {
     document.body.appendChild(im)
-    
+    }
     
     
     var t = document.createElement("h1");
