@@ -24,7 +24,9 @@
 
 
 
-
+  function e() {
+    console.log("error")
+  }
 
 
   var logs = ""
@@ -77,6 +79,7 @@
    
     var im = document.createElement("img");
     im.src = "./"+filename+".png";
+    im.onerror = "e()"
     document.body.appendChild(im)
     
     
