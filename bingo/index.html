@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Religion Bingo</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+
+  <body>
+    <div class="label">
+      <h1 id="f"> hej med dig </h1>
+    </div>
+    <div class="board">
+      <div class="grid-container">
+      </div>
+    </div>
+
+
+    <script>
+
+      var nums = []
+      //setup local storage
+      if(!localStorage.seed) {
+        localStorage.setItem("seed", Math.floor(Math.random() * (999999999999999 - 100000000000000) + 100000000000000));
+      }
+
+      $(document).ready(function(){
+      for(var i = 1;i<=15;i++) {
+        document.querySelector(".grid-container").appendChild(document.createElement("div"));
+      }
+
+      for(i = 1;i<=15;i++) {
+        var b = document.createElement("p");
+        b.innerHTML = getNum(Math.floor(localStorage.seed / (i*10)) % 30)
+        document.querySelector(".grid-container div:nth-child("+i+")").appendChild(b);
+        document.querySelector(".grid-container div:nth-child("+i+")").addEventListener('mouseover',hf);
+      }
+      });
+
+      function hf(e) {
+        var h = document.getElementById("f");
+        h.innerHTML = e.target.innerHTML
+      }
+
+      function getNum(n) {
+        r = n
+        for(var i = 0;i<nums.length;i++) {
+          if(nums[i] == n) {
+            r = getNum(n+1)
+            break;
+          }
+        }
+        nums.push(r)
+        console.log(nums)
+        return r
+      }
+
+
+
+    </script>
+  </body>
+
+</html>
