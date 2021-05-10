@@ -18,7 +18,16 @@
 
 
     <script>
-
+      var q = ["flipper ud uden grund",
+               "gentager joke flere gange i træk",
+"anbefaler obskur litteratur",
+"halvdelen af modulet går med forelæsning",
+'"jer på bagerste række >:("',
+"bytter rundt på navnene",
+"udskammer folk for at spørge",
+"misforstår hvad folk siger",
+"jeg kan ikke høre dig",
+"fisker efter bestemt svar"]
       var nums = []
       //setup local storage
       if(!localStorage.seed) {
@@ -32,7 +41,8 @@
 
       for(i = 1;i<=15;i++) {
         var b = document.createElement("p");
-        b.innerHTML = getNum(Math.floor(localStorage.seed / (i*10)) % 30)
+        var id = getNum(Math.floor(localStorage.seed / (i*10)) % q.length)
+        b.innerHTML = q[id]
         document.querySelector(".grid-container div:nth-child("+i+")").appendChild(b);
         document.querySelector(".grid-container div:nth-child("+i+")").addEventListener('mouseover',hf);
       }
@@ -47,7 +57,7 @@
         r = n
         for(var i = 0;i<nums.length;i++) {
           if(nums[i] == n) {
-            r = getNum(n+1)
+            r = getNum((n+1) % q.length)
             break;
           }
         }
