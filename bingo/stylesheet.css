@@ -14,12 +14,10 @@ body {
   grid-template-areas:
     ". . . . ."
     ". . . . ."
-    ". . . . ."
-    ". . . . ."
     ". . . . .";
 }
 
-.click {
+.c {
   background-color: rgba(255,0,0,100);
 }
 

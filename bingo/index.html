@@ -47,6 +47,7 @@
 ]
 console.log(q.length)
       var nums = []
+      var t = -1
       //setup local storage
       if(!localStorage.seed) {
         localStorage.setItem("seed", Math.floor(Math.random() * (999999999999999 - 100000000000000) + 100000000000000));
@@ -59,7 +60,7 @@ console.log(q.length)
         var b = document.createElement("p");
         var id = getNum(Math.floor(ls.seed / (i*10)) % q.length)
         b.innerHTML = q[id]
-        //document.querySelector(".grid-container div:nth-child("+i+")").className += i
+        document.querySelector(".grid-container div:nth-child("+i+")").className += i
         document.querySelector(".grid-container div:nth-child("+i+")").appendChild(b);
         document.querySelector(".grid-container div:nth-child("+i+")").addEventListener('mouseover',hf);
         document.querySelector(".grid-container div:nth-child("+i+")").addEventListener("click",mark);
@@ -72,10 +73,12 @@ console.log(q.length)
       function hf(e) {
         var h = document.getElementById("f");
         h.innerHTML = e.target.innerHTML
+        t = e.target.id
+        console.log(e.target)
       }
 
       function mark(e) {
-        $(e.target.parentElement).toggleClass("click");
+        $(e.target.parentElement).toggleClass("c");
       }
 
       function getNum(n) {
