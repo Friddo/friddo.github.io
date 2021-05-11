@@ -59,5 +59,9 @@ body {
   vertical-align: middle;
 }
 
+.grid-container div .click {
+  background-color: red;
+}
+
 
 
