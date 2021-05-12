@@ -18,7 +18,7 @@ body {
 }
 
 .co {
-  background-color: rgba(255, 109, 77,10);
+  background-color: rgb(255, 109, 77);
 }
 
 .grid-container div {
@@ -31,7 +31,7 @@ body {
 
 
 .grid-container div:hover {
-  background-color: rgba(143, 249, 255,10)
+  background-color: rgb(143, 249, 255)
 }
 
 .label {
