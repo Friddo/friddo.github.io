@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Religion Bingo</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body class="sheesh">
+
+  </body>
+
+  <script>
+    var q = [
+"flipper ud uden grund",
+"gentager joke flere gange i træk",
+"anbefaler obskur litteratur",
+"halvdelen af modulet går med forelæsning",
+'"jer på bagerste række >:("',
+"bytter rundt på navnene",
+"udskammer folk for at spørge",
+"misforstår hvad folk siger",
+"jeg kan ikke høre dig",
+"fisker efter bestemt svar",
+'halvdelen af modulet går med at læse',
+'halvdelen af modulet går med forelæsninger',
+'gentager pointer flere gange',
+'har problemer med teknikken',
+'"Vi har lidt travlt"',
+'skriver noget uforståeligt',
+'nogen forlader lokalet i over 10 minutter',
+'kræver at der bliver luftet ud',
+'justerer mundbind flere gange på et minut',
+'er uforberedt',
+'"det er en diskussion til en anden gang"',
+'refererer til at vi er fymaer i forbindelse med nogle tal',
+'"luk computerne og følg med"',
+'opgaverne står i lectio',
+'bliver afsporet og går ud af en tangent'
+]
+      $(document).ready(function(){
+        for(var i = 0;i<q.length;i++) {
+          var a = '<input type="checkbox" id="'+i+'" name="q'+i+'" value="Bike"><label for="q'+i+'">'+q[i]+'</label><br>'
+          document.querySelector(".sheesh").innerHTML += a
+        }
+      });
+
+  </script>
+
+</html>
