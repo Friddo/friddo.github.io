@@ -9,8 +9,11 @@
 
   <body>
     <div class="label">
-      <h1 id="f"> hej med dig </h1>
+      <h1 id="f"> Religion Bingo </h1>
     </div>
+    <div style="margin: 4vh 20%; margin-top: 0; text-align: center">
+    <p>Hold musen over for stor tekst. Klik for at markere som fået.</p>
+  </div>
     <div class="board">
       <div class="grid-container">
       </div>
@@ -53,7 +56,7 @@ console.log(q.length)
         localStorage.setItem("seed", Math.floor(Math.random() * (999999999999999 - 100000000000000) + 100000000000000));
       }
       var ls = localStorage
-
+      console.log(ls.seed)
       $(document).ready(function(){
       for(var i = 1;i<=15;i++) {
         document.querySelector(".grid-container").appendChild(document.createElement("div"));
@@ -69,16 +72,20 @@ console.log(q.length)
 
       });
 
-
       function hf(e) {
         var h = document.getElementById("f");
         h.innerHTML = e.target.innerHTML
         t = e.target.id
-        console.log(e.target)
       }
 
       function mark(e) {
-        $(e.target.parentElement).toggleClass("c");
+        if(e.target.parentElement.classList[0] != "grid-container") {
+          $(e.target.parentElement).toggleClass("co");
+        }
+        else {
+          $(e.target).toggleClass("co");
+        }
+
       }
 
       function getNum(n) {
@@ -90,7 +97,6 @@ console.log(q.length)
           }
         }
         nums.push(r)
-        console.log(nums)
         return r
       }
 
