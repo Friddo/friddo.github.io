@@ -7,6 +7,10 @@ body {
   padding: 50px;
 }
 
+hr {
+  border-color: rgb(70,70,70);
+}
+
 .header-wrap {
   width: 180px;
   position: fixed;
@@ -110,18 +114,16 @@ p {
   margin: 0px 0;
 }
 
-
-header img {
+header .logo {
   width: 180px;
 }
 
-header a:hover {
+li:hover a {
   color: rgb(0,0,0);
 }
 
 header hr {
   margin: 20px 0;
-  color: black;
 }
 
 header p {
@@ -131,6 +133,30 @@ header p {
 }
 
 
+
+
+
+.social {
+  position: fixed;
+  width: 180px;
+  bottom: 50px;
+  left: 50px;
+  margin: auto;
+  text-align: center;
+}
+
+.social img {
+  width: 32px;
+  height: 32px;
+}
+
+.social img:hover {
+  opacity: 0.6;
+}
+
+.social a {
+  text-decoration: none;
+}
 
 
 
