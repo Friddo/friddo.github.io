@@ -11,6 +11,8 @@ hr {
   border-color: rgb(70,70,70);
 }
 
+
+
 .header-wrap {
   width: 180px;
   position: fixed;
@@ -51,7 +53,7 @@ blockquote {
 .content {
   font-family: 'Roboto Slab', serif;
   margin-left: 250px;
-  max-width: 800px;
+  max-width: 600px;
   font-size: 16px;
   font-weight: 400;
 }
@@ -64,16 +66,16 @@ p {
 .content img {
   height: 100%;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   object-fit: contain;
-
 }
 
-.sh {
+.img-container {
+  margin-top: 10px;
   margin-bottom: 40px;
 }
 
-.sh p {
+.img-container p {
   margin-top: 5px;
   font-style: italic;
 }
@@ -183,7 +185,14 @@ header p {
 
 
 
-
+@media (max-width:950px) {
+  .header-wrap {
+    display: none;
+  }
+  .content {
+    margin: auto;
+  }
+}
 
 
 
