@@ -16,7 +16,7 @@ hr {
   position: fixed;
   top: 50px;
   left: 50px;
-  height: 500px;
+  height: 80vh;
 }
 
 .title {
@@ -46,10 +46,12 @@ blockquote {
   color: rgb(70,70,70)
 }
 
+
+
 .content {
   font-family: 'Roboto Slab', serif;
   margin-left: 250px;
-  max-width: 600px;
+  max-width: 800px;
   font-size: 16px;
   font-weight: 400;
 }
@@ -62,8 +64,9 @@ p {
 .content img {
   height: 100%;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   object-fit: contain;
+
 }
 
 .sh {
@@ -101,6 +104,7 @@ p {
   cursor: pointer;
 }
 
+
 .subnav {
   height: 0px;
   font-size: 14px;
@@ -118,9 +122,34 @@ header .logo {
   width: 180px;
 }
 
-li:hover a {
+.page:hover {
   color: rgb(0,0,0);
 }
+
+.folder:hover .high {
+  color: rgb(0,0,0);
+}
+
+#sec-nav {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+  line-height: 30px;
+  font-weight: 400;
+  text-transform: none;
+  margin-top: 50px;
+  color: rgb(70,70,70);
+}
+
+#sec-nav ul {
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
+}
+
+
 
 header hr {
   margin: 20px 0;
@@ -132,22 +161,14 @@ header p {
   text-align: center;
 }
 
-
-
-
-
 .social {
-  position: fixed;
+  margin-top: 10px;
   width: 180px;
-  bottom: 50px;
-  left: 50px;
-  margin: auto;
-  text-align: center;
 }
 
 .social img {
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
 }
 
 .social img:hover {
